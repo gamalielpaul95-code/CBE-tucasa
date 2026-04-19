@@ -2,9 +2,9 @@
 <html lang="sw">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>TUCASA CBE | SDA Choir Management System</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <title>TUCASA CBE | Professional Choir Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -16,75 +16,102 @@
         :root{--cbe-green:#2e7d32;--cbe-gold:#ffc107;--cbe-blue:#1565c0;--cbe-white:#fff;--cbe-light-green:#e8f5e9;--cbe-dark:#1b5e20;--sda-purple:#6a1b9a}
         body{font-family:'Inter',sans-serif;background:var(--cbe-light-green);overflow-x:hidden}
         .splash-screen{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,var(--cbe-green),var(--sda-purple));display:flex;justify-content:center;align-items:center;z-index:10000;animation:splashFade 3.5s forwards}
-        @keyframes splashFade{0%{opacity:1}80%{opacity:1}100%{opacity:0;visibility:hidden}}
-        .splash-content{text-align:center;animation:splashScale 1.5s}
+        @keyframes splashFade{0%{opacity:1}70%{opacity:1}100%{opacity:0;visibility:hidden}}
+        .splash-content{text-align:center;animation:splashScale 1.5s;padding:20px}
         @keyframes splashScale{0%{transform:scale(0.8);opacity:0}100%{transform:scale(1);opacity:1}}
-        .splash-logos{display:flex;gap:3rem;flex-wrap:wrap;justify-content:center;margin-bottom:2rem}
-        .logo-card{background:rgba(255,255,255,0.15);backdrop-filter:blur(20px);border-radius:30px;padding:2rem;text-align:center;border:2px solid var(--cbe-gold);animation:logoGlow 2s infinite}
+        .splash-logos{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin-bottom:30px}
+        .logo-card{background:rgba(255,255,255,0.15);backdrop-filter:blur(20px);border-radius:30px;padding:15px 25px;text-align:center;border:2px solid var(--cbe-gold);animation:logoGlow 2s infinite}
         @keyframes logoGlow{0%,100%{box-shadow:0 0 20px var(--cbe-gold)}50%{box-shadow:0 0 50px var(--cbe-gold)}}
-        .logo-circle{width:120px;height:120px;background:var(--cbe-white);border-radius:60px;display:flex;align-items:center;justify-content:center;margin:0 auto}
-        .logo-circle i{font-size:3.5rem;color:var(--cbe-green)}
-        .splash-title{font-size:2.5rem;color:var(--cbe-white);font-weight:800;margin-top:1rem}
+        .logo-image{width:100px;height:100px;border-radius:50%;object-fit:cover;margin:0 auto;display:block}
+        .splash-title{font-size:2rem;color:var(--cbe-white);font-weight:800;margin-top:1rem}
+        @media (max-width:768px){.logo-image{width:80px;height:80px}.splash-title{font-size:1.5rem}}
+        @media (max-width:480px){.logo-image{width:65px;height:65px}.splash-title{font-size:1.2rem}}
         .splash-sub{color:var(--cbe-gold);margin-top:0.5rem}
-        .founder{margin-top:2rem;color:rgba(255,255,255,0.8);font-size:0.9rem}
-        .app-container{display:none}
-        .cbe-header{background:var(--cbe-white);box-shadow:0 2px 10px rgba(0,0,0,0.1);position:sticky;top:0;z-index:100}
-        .cbe-card{background:var(--cbe-white);border-radius:16px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:all 0.3s;border-left:4px solid var(--cbe-gold)}
-        .cbe-card:hover{box-shadow:0 8px 25px rgba(0,0,0,0.15);transform:translateY(-2px)}
-        .btn-cbe{background:linear-gradient(135deg,var(--cbe-green),var(--cbe-dark));color:var(--cbe-white);border:none;padding:12px 28px;border-radius:50px;font-weight:600;cursor:pointer;transition:all 0.3s}
-        .btn-cbe:hover{transform:translateY(-2px);box-shadow:0 5px 15px rgba(46,125,50,0.4)}
+        .founder{margin-top:2rem;color:rgba(255,255,255,0.8);font-size:0.85rem}
+        .app-container{display:none;position:relative;z-index:1}
+        .pro-header{background:var(--cbe-white);box-shadow:0 4px 20px rgba(0,0,0,0.08);position:sticky;top:0;z-index:100}
+        .header-main{display:flex;justify-content:space-between;align-items:center;padding:12px 20px}
+        .logo-area{display:flex;align-items:center;gap:12px}
+        .round-square-logo{width:50px;height:50px;background:linear-gradient(135deg,var(--cbe-green),var(--sda-purple));border-radius:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(46,125,50,0.3);transition:transform 0.3s;overflow:hidden}
+        .round-square-logo img{width:100%;height:100%;object-fit:cover}
+        .round-square-logo:hover{transform:scale(1.05)}
+        .logo-text h1{font-size:1.3rem;color:var(--cbe-green);font-weight:700}
+        .logo-text p{font-size:0.7rem;color:#666}
+        @media (max-width:480px){.round-square-logo{width:40px;height:40px}.logo-text h1{font-size:1rem}}
+        .user-info{display:flex;align-items:center;gap:12px}
+        .user-badge{background:linear-gradient(135deg,var(--cbe-green),var(--sda-purple));padding:6px 14px;border-radius:30px;color:white;font-size:12px;font-weight:500}
+        .hamburger{display:none;flex-direction:column;cursor:pointer;gap:5px;padding:10px;background:var(--cbe-light-green);border-radius:12px}
+        .hamburger span{width:25px;height:3px;background:var(--cbe-green);border-radius:3px;transition:all 0.3s}
+        .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,6px)}
+        .hamburger.active span:nth-child(2){opacity:0}
+        .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-6px)}
+        .desktop-nav{display:flex;gap:8px;flex-wrap:wrap;padding:0 20px 12px 20px}
+        .mobile-nav{display:none;flex-direction:column;background:var(--cbe-white);border-top:1px solid #eee;max-height:0;overflow:hidden;transition:max-height 0.4s ease}
+        .mobile-nav.open{max-height:500px}
+        .mobile-nav .tab{padding:14px 20px;border-bottom:1px solid #eee;font-size:14px}
+        @media (max-width:768px){.desktop-nav{display:none}.hamburger{display:flex}.mobile-nav{display:flex}}
+        .tab{padding:10px 18px;cursor:pointer;color:#555;font-weight:500;border-radius:30px;transition:all 0.3s;font-size:13px}
+        .tab:hover{background:var(--cbe-light-green);color:var(--cbe-green)}
+        .tab.active{background:linear-gradient(135deg,var(--cbe-green),var(--sda-purple));color:white}
+        .glass-card{background:var(--cbe-white);border-radius:20px;box-shadow:0 8px 25px rgba(0,0,0,0.08);transition:all 0.3s;border-left:4px solid var(--cbe-gold);margin:15px}
+        .glass-card:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(0,0,0,0.12)}
+        .btn-cbe{background:linear-gradient(135deg,var(--cbe-green),var(--cbe-dark));color:white;border:none;padding:10px 24px;border-radius:50px;font-weight:600;cursor:pointer;transition:all 0.3s;font-size:13px}
+        .btn-cbe:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(46,125,50,0.3)}
         .btn-cbe-outline{background:transparent;border:2px solid var(--cbe-green);color:var(--cbe-green)}
-        .chat-container{height:500px;display:flex;flex-direction:column;background:var(--cbe-grey);border-radius:16px;overflow:hidden}
-        .chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px}
-        .message{max-width:70%;padding:10px 14px;border-radius:18px}
-        .message-sent{background:var(--cbe-green);color:white;align-self:flex-end;border-bottom-right-radius:4px}
-        .message-received{background:var(--cbe-white);color:#333;align-self:flex-start;border-bottom-left-radius:4px;box-shadow:0 1px 2px rgba(0,0,0,0.1)}
-        .message-sender{font-size:11px;font-weight:600;margin-bottom:4px;opacity:0.8}
-        .message-time{font-size:10px;margin-top:4px;opacity:0.6;text-align:right}
-        .chat-input-area{display:flex;gap:12px;padding:12px;background:var(--cbe-white);border-top:1px solid #e0e0e0}
-        .chat-input{flex:1;padding:12px 16px;border:1px solid #ddd;border-radius:25px;font-family:'Inter',sans-serif}
-        .chat-input:focus{outline:none;border-color:var(--cbe-green)}
-        .cbe-tabs{display:flex;gap:8px;background:var(--cbe-white);padding:0 20px;border-bottom:1px solid #e0e0e0;flex-wrap:wrap}
-        .tab{padding:14px 24px;cursor:pointer;color:#666;font-weight:500;border-bottom:3px solid transparent;transition:all 0.2s}
-        .tab.active{color:var(--cbe-green);border-bottom-color:var(--cbe-green)}
-        .tab:hover{background:var(--cbe-light-green)}
-        .cbe-table{width:100%;border-collapse:collapse}
-        .cbe-table th{text-align:left;padding:12px 16px;background:var(--cbe-light-green);color:var(--cbe-green);font-weight:600}
-        .cbe-table td{padding:12px 16px;border-bottom:1px solid #e0e0e0}
-        .cbe-table tr:hover{background:var(--cbe-light-green)}
-        .profile-img{width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid var(--cbe-gold)}
-        .profile-icon{width:50px;height:50px;background:linear-gradient(135deg,var(--cbe-green),var(--cbe-blue));border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;font-size:20px}
-        .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:10001;justify-content:center;align-items:center}
-        .modal-content{width:90%;max-width:600px;max-height:85vh;overflow-y:auto;background:white;border-radius:16px;padding:24px}
-        .loading{display:inline-block;width:20px;height:20px;border:2px solid #fff;border-radius:50%;border-top-color:transparent;animation:spin 0.6s linear infinite}
-        @keyframes spin{to{transform:rotate(360deg)}}
-        .footer{text-align:center;padding:20px;background:var(--cbe-green);color:var(--cbe-white);margin-top:40px}
-        .poster-slider{margin-bottom:2rem;border-radius:16px;overflow:hidden}
-        .swiper-slide img{width:100%;height:500px;object-fit:cover}
+        .poster-slider{margin:15px;border-radius:20px;overflow:hidden}
+        .swiper-slide img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+        @media (max-width:768px){.swiper-slide img{height:350px}}
+        @media (max-width:480px){.swiper-slide img{height:280px}}
+        .container{max-width:1400px;margin:0 auto;padding:20px}
+        @media (max-width:768px){.container{padding:15px}}
         .form-group{margin-bottom:15px}
-        .form-group label{display:block;margin-bottom:5px;font-weight:500;color:#333}
-        .form-group input,.form-group select,.form-group textarea{width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;font-family:'Inter',sans-serif}
-        .btn-sm{padding:6px 12px;font-size:12px}
-        .stat-card{text-align:center;padding:20px;background:white;border-radius:16px}
-        .info-row{display:flex;padding:12px;border-bottom:1px solid #eee}
-        .info-label{width:140px;font-weight:600;color:var(--cbe-green)}
-        .info-value{flex:1;color:#333}
-        .bible-verse{background:linear-gradient(135deg,var(--cbe-green),var(--sda-purple));color:white;padding:20px;border-radius:16px;text-align:center;margin-bottom:20px}
-        .bible-verse h3{font-size:1.2rem;margin-bottom:10px}
-        .bible-verse p{font-style:italic;font-size:1.1rem}
-        .announcement-item{padding:12px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center}
-        .calendar-container{min-height:500px}
-        .sda-badge{background:var(--sda-purple);color:white;padding:4px 12px;border-radius:20px;font-size:12px;display:inline-block}
-        .image-preview{width:100px;height:100px;border-radius:50%;object-fit:cover;margin-top:10px}
-        @media (max-width:768px){.splash-logos{gap:1rem}.logo-circle{width:80px;height:80px}.logo-circle i{font-size:2rem}.splash-title{font-size:1.5rem}.message{max-width:85%}.tab{padding:10px 16px;font-size:12px}.swiper-slide img{height:250px}}
+        .form-group label{display:block;margin-bottom:6px;font-weight:500;color:#333;font-size:13px}
+        .form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:12px;font-family:'Inter',sans-serif;font-size:14px}
+        .form-group input:focus,.form-group select:focus{outline:none;border-color:var(--cbe-green);box-shadow:0 0 0 3px rgba(46,125,50,0.1)}
+        .leader-badge{background:linear-gradient(135deg,var(--cbe-gold),#e6a800);color:#333;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:600;margin-left:8px}
+        .cbe-table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}
+        .cbe-table th,.cbe-table td{padding:10px 12px;font-size:13px;text-align:left;border-bottom:1px solid #eee}
+        .cbe-table th{background:var(--cbe-light-green);color:var(--cbe-green);font-weight:600}
+        .chat-container{height:450px;display:flex;flex-direction:column;background:#f5f5f5;border-radius:16px;overflow:hidden}
+        .chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px}
+        .message{max-width:80%;padding:10px 14px;border-radius:18px;font-size:13px}
+        .message-sent{background:var(--cbe-green);color:white;align-self:flex-end;border-bottom-right-radius:4px}
+        .message-received{background:white;color:#333;align-self:flex-start;border-bottom-left-radius:4px;box-shadow:0 1px 2px rgba(0,0,0,0.1)}
+        .chat-input-area{display:flex;gap:10px;padding:12px;background:white;border-top:1px solid #eee}
+        .chat-input{flex:1;padding:10px 15px;border:1px solid #ddd;border-radius:25px;font-family:'Inter',sans-serif}
+        .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:10001;justify-content:center;align-items:center;backdrop-filter:blur(5px)}
+        .modal-content{width:90%;max-width:550px;max-height:85vh;overflow-y:auto;background:white;border-radius:24px;padding:25px}
+        .bible-verse{background:linear-gradient(135deg,var(--cbe-green),var(--sda-purple));color:white;padding:20px;border-radius:20px;text-align:center}
+        .footer{text-align:center;padding:20px;background:linear-gradient(135deg,var(--cbe-green),var(--cbe-dark));color:white;margin-top:40px;font-size:12px}
+        .loading{display:inline-block;width:18px;height:18px;border:2px solid #fff;border-radius:50%;border-top-color:transparent;animation:spin 0.6s linear infinite}
+        @keyframes spin{to{transform:rotate(360deg)}}
+        .toast{position:fixed;bottom:20px;right:20px;left:20px;background:var(--cbe-green);color:white;padding:12px 20px;border-radius:12px;z-index:10002;text-align:center;max-width:400px;margin:0 auto;font-size:13px;animation:slideUp 0.3s ease}
+        @keyframes slideUp{from{transform:translateY(100%);opacity:0}to{transform:translateY(0);opacity:1}}
+        .profile-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--cbe-green),var(--cbe-blue));border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:bold}
+        .stat-card{text-align:center;padding:15px;background:white;border-radius:16px;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+        .stat-card h2{font-size:28px;color:var(--cbe-green)}
+        @media (max-width:480px){.stat-card h2{font-size:22px}}
     </style>
 </head>
 <body>
 <div class="splash-screen" id="splashScreen">
     <div class="splash-content">
         <div class="splash-logos">
-            <div class="logo-card"><div class="logo-circle"><i class="fas fa-university"></i></div><h3 style="color:white;margin-top:1rem">CBE</h3><p style="color:var(--cbe-gold);font-size:12px">College of Business Education</p></div>
-            <div class="logo-card"><div class="logo-circle"><i class="fas fa-church"></i><i class="fas fa-cross" style="margin-left:5px"></i></div><h3 style="color:white;margin-top:1rem">SDA Church</h3><p style="color:var(--cbe-gold);font-size:12px">Dar es Salaam Central</p></div>
+            <!-- ============================================ -->
+            <!-- 🔴 PICHA ZA NDANI - WEKA MABADILIKO HAPA 🔴 -->
+            <!-- ============================================ -->
+            <!-- Logo ya CBE - Badilisha jina la faili hapa -->
+            <div class="logo-card">
+                <img src="images/cbe-logo.png" alt="CBE Logo" class="logo-image" id="cbeLogo" onerror="this.src='https://via.placeholder.com/100?text=CBE'">
+                <h3 style="color:white;margin-top:8px">CBE</h3>
+                <p style="color:var(--cbe-gold);font-size:9px">College of Business Education</p>
+            </div>
+            <!-- Logo ya Kanisa SDA - Badilisha jina la faili hapa -->
+            <div class="logo-card">
+                <img src="images/sda-logo.png" alt="SDA Logo" class="logo-image" id="sdaLogo" onerror="this.src='https://via.placeholder.com/100?text=SDA'">
+                <h3 style="color:white;margin-top:8px">SDA Church</h3>
+                <p style="color:var(--cbe-gold);font-size:9px">Dar es Salaam Central</p>
+            </div>
         </div>
         <div class="splash-title">TUCASA CBE DSM</div>
         <div class="splash-sub">Seventh-day Adventist Choir</div>
@@ -93,32 +120,38 @@
 </div>
 
 <div class="app-container" id="appContainer">
-    <header class="cbe-header">
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 24px;flex-wrap:wrap">
-            <div style="display:flex;align-items:center;gap:15px">
-                <div style="background:linear-gradient(135deg,var(--cbe-green),var(--sda-purple));width:45px;height:45px;border-radius:12px;display:flex;align-items:center;justify-content:center"><i class="fas fa-choir" style="color:var(--cbe-gold);font-size:24px"></i></div>
-                <div><h2 style="color:var(--cbe-green)">TUCASA CBE</h2><p style="font-size:10px;color:#666">Dar es Salaam Central SDA Church</p></div>
+    <header class="pro-header">
+        <div class="header-main">
+            <div class="logo-area">
+                <div class="round-square-logo" id="headerLogo">
+                    <img src="images/cbe-logo.png" alt="Logo" onerror="this.parentElement.innerHTML='<i class=\'fas fa-choir\'></i>'">
+                </div>
+                <div class="logo-text">
+                    <h1>TUCASA CBE</h1>
+                    <p>Dar es Salaam Central SDA Church</p>
+                </div>
             </div>
-            <div style="display:flex;gap:15px;align-items:center">
-                <span id="userEmailDisplay" style="color:#555;font-size:14px"></span>
-                <span id="userRoleBadge" style="background:#ffc107;color:#333;padding:4px 12px;border-radius:20px;font-size:12px"></span>
-                <button id="logoutBtn" class="btn-cbe btn-cbe-outline" style="padding:8px 20px"><i class="fas fa-sign-out-alt"></i> Ondoka</button>
+            <div class="user-info">
+                <span id="userEmailDisplay" style="font-size:13px;color:#555"></span>
+                <span id="userRoleBadge" class="user-badge"></span>
+                <button id="logoutBtn" class="btn-cbe btn-cbe-outline" style="padding:6px 15px;font-size:12px"><i class="fas fa-sign-out-alt"></i> Ondoka</button>
+                <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
             </div>
         </div>
-        <div class="cbe-tabs" id="tabsContainer">
-            <div id="adminTabs" style="display:none">
+        <div class="desktop-nav" id="desktopNav">
+            <div id="adminDesktopTabs" style="display:none;flex-wrap:wrap;gap:5px">
                 <div class="tab" data-tab="dashboard">Dashboard</div>
                 <div class="tab" data-tab="bible">Neno la Siku</div>
                 <div class="tab" data-tab="calendar">Calendar</div>
                 <div class="tab" data-tab="announcements">Matangazo</div>
                 <div class="tab" data-tab="posters">Posters</div>
-                <div class="tab" data-tab="chat">Group Chat</div>
+                <div class="tab" data-tab="chat">Chat</div>
                 <div class="tab" data-tab="attendance">Attendance</div>
-                <div class="tab" data-tab="songs">Song Library</div>
+                <div class="tab" data-tab="songs">Nyimbo</div>
                 <div class="tab" data-tab="reports">Reports</div>
                 <div class="tab" data-tab="members">Members</div>
             </div>
-            <div id="memberTabs" style="display:none">
+            <div id="memberDesktopTabs" style="display:none;flex-wrap:wrap;gap:5px">
                 <div class="tab" data-tab="member-dashboard">Profile</div>
                 <div class="tab" data-tab="member-bible">Neno la Siku</div>
                 <div class="tab" data-tab="member-calendar">Calendar</div>
@@ -128,9 +161,32 @@
                 <div class="tab" data-tab="member-songs">Nyimbo</div>
             </div>
         </div>
+        <div class="mobile-nav" id="mobileNav">
+            <div id="adminMobileTabs" style="display:none">
+                <div class="tab" data-tab="dashboard"><i class="fas fa-chart-line"></i> Dashboard</div>
+                <div class="tab" data-tab="bible"><i class="fas fa-bible"></i> Neno la Siku</div>
+                <div class="tab" data-tab="calendar"><i class="fas fa-calendar"></i> Calendar</div>
+                <div class="tab" data-tab="announcements"><i class="fas fa-bullhorn"></i> Matangazo</div>
+                <div class="tab" data-tab="posters"><i class="fas fa-images"></i> Posters</div>
+                <div class="tab" data-tab="chat"><i class="fab fa-whatsapp"></i> Chat</div>
+                <div class="tab" data-tab="attendance"><i class="fas fa-calendar-check"></i> Attendance</div>
+                <div class="tab" data-tab="songs"><i class="fas fa-music"></i> Nyimbo</div>
+                <div class="tab" data-tab="reports"><i class="fas fa-file-pdf"></i> Reports</div>
+                <div class="tab" data-tab="members"><i class="fas fa-users"></i> Members</div>
+            </div>
+            <div id="memberMobileTabs" style="display:none">
+                <div class="tab" data-tab="member-dashboard"><i class="fas fa-user-circle"></i> Profile</div>
+                <div class="tab" data-tab="member-bible"><i class="fas fa-bible"></i> Neno la Siku</div>
+                <div class="tab" data-tab="member-calendar"><i class="fas fa-calendar"></i> Calendar</div>
+                <div class="tab" data-tab="member-announcements"><i class="fas fa-bullhorn"></i> Matangazo</div>
+                <div class="tab" data-tab="member-chat"><i class="fab fa-whatsapp"></i> Chat</div>
+                <div class="tab" data-tab="member-attendance"><i class="fas fa-calendar-check"></i> Attendance</div>
+                <div class="tab" data-tab="member-songs"><i class="fas fa-music"></i> Nyimbo</div>
+            </div>
+        </div>
     </header>
 
-    <div class="poster-slider swiper" id="posterSlider" style="margin:20px">
+    <div class="poster-slider swiper" id="posterSlider">
         <div class="swiper-wrapper" id="posterWrapper">
             <div class="swiper-slide"><img src="https://picsum.photos/1080/1080?random=1" alt="Poster"></div>
             <div class="swiper-slide"><img src="https://picsum.photos/1080/1080?random=2" alt="Poster"></div>
@@ -141,56 +197,80 @@
         <div class="swiper-button-prev"></div>
     </div>
 
-    <div style="max-width:1400px;margin:0 auto;padding:24px">
-        <div id="authSection" class="cbe-card" style="max-width:500px;margin:60px auto;padding:35px">
-            <div style="text-align:center;margin-bottom:25px"><div style="background:linear-gradient(135deg,var(--cbe-green),var(--sda-purple));width:70px;height:70px;border-radius:20px;margin:0 auto 15px;display:flex;align-items:center;justify-content:center"><i class="fas fa-users" style="color:var(--cbe-gold);font-size:32px"></i></div><h2 style="color:var(--cbe-green)">Karibu Kwaya</h2><p style="color:#666">Ingia au Jiunge na familia yetu</p></div>
-            <div style="display:flex;gap:12px;margin-bottom:25px"><button id="showLoginBtn" class="btn-cbe" style="flex:1">Ingia</button><button id="showRegisterBtn" class="btn-cbe btn-cbe-outline" style="flex:1">Jiunge</button></div>
-            <div id="loginForm"><input type="email" id="loginEmail" placeholder="Barua pepe" style="width:100%;padding:12px;margin-bottom:12px;border:1px solid #ddd;border-radius:8px"><input type="password" id="loginPassword" placeholder="Nenosiri" style="width:100%;padding:12px;margin-bottom:12px;border:1px solid #ddd;border-radius:8px"><button id="doLoginBtn" class="btn-cbe" style="width:100%">Ingia</button></div>
-            <div id="registerForm" style="display:none"><div class="form-group"><label>Jina kamili</label><input type="text" id="regFullName" placeholder="Jina lako kamili"></div><div class="form-group"><label>Barua pepe</label><input type="email" id="regEmail" placeholder="email@example.com"></div><div class="form-group"><label>Nenosiri</label><input type="password" id="regPassword" placeholder="Nenosiri (min 6 herufi)"></div><div class="form-group"><label>Namba ya simu</label><input type="tel" id="regPhone" placeholder="0712 345 678"></div><div class="form-group"><label>Sauti</label><select id="regVoicePart"><option value="Soprano">Soprano</option><option value="Alto">Alto</option><option value="Tenor">Tenor</option><option value="Bass">Bass</option></select></div><div class="form-group"><label>Hali ya Ndoa</label><select id="regMaritalStatus"><option value="Single">Single</option><option value="Married">Married</option><option value="Divorced">Divorced</option><option value="Widowed">Widowed</option></select></div><div class="form-group"><label>Picha ya Profile</label><input type="file" id="regProfilePic" accept="image/*"><div id="regProfilePreview" style="margin-top:10px;display:none"><img id="regProfilePreviewImg" class="image-preview"></div></div><button id="doRegisterBtn" class="btn-cbe" style="width:100%">Jiunge Sasa</button></div>
+    <div class="container">
+        <div id="authSection" class="glass-card" style="max-width:500px;margin:40px auto;padding:30px">
+            <div style="text-align:center;margin-bottom:25px">
+                <div class="round-square-logo" style="margin:0 auto 15px;width:60px;height:60px" id="authLogo">
+                    <img src="images/cbe-logo.png" alt="Logo" style="width:100%;height:100%;object-fit:cover" onerror="this.parentElement.innerHTML='<i class=\'fas fa-choir\' style=\'font-size:28px\'></i>'">
+                </div>
+                <h2 style="color:var(--cbe-green)">Karibu Kwaya</h2>
+                <p style="color:#666">Ingia au Jiunge na familia yetu</p>
+            </div>
+            <div style="display:flex;gap:12px;margin-bottom:25px">
+                <button id="showLoginBtn" class="btn-cbe" style="flex:1">Ingia</button>
+                <button id="showRegisterBtn" class="btn-cbe btn-cbe-outline" style="flex:1">Jiunge</button>
+            </div>
+            <div id="loginForm">
+                <input type="email" id="loginEmail" placeholder="Barua pepe" style="width:100%;padding:12px;margin-bottom:12px;border:1px solid #ddd;border-radius:12px">
+                <input type="password" id="loginPassword" placeholder="Nenosiri" style="width:100%;padding:12px;margin-bottom:12px;border:1px solid #ddd;border-radius:12px">
+                <button id="doLoginBtn" class="btn-cbe" style="width:100%">Ingia</button>
+            </div>
+            <div id="registerForm" style="display:none">
+                <div class="form-group"><label>Jina kamili</label><input type="text" id="regFullName" placeholder="Jina lako kamili"></div>
+                <div class="form-group"><label>Barua pepe</label><input type="email" id="regEmail" placeholder="email@example.com"></div>
+                <div class="form-group"><label>Nenosiri</label><input type="password" id="regPassword" placeholder="Nenosiri (min 6 herufi)"></div>
+                <div class="form-group"><label>Namba ya simu</label><input type="tel" id="regPhone" placeholder="0712 345 678"></div>
+                <div class="form-group"><label>Sauti</label><select id="regVoicePart"><option value="Soprano">Soprano</option><option value="Alto">Alto</option><option value="Tenor">Tenor</option><option value="Bass">Bass</option></select></div>
+                <div class="form-group"><label>Hali ya Ndoa</label><select id="regMaritalStatus"><option value="Single">Single</option><option value="Married">Married</option><option value="Divorced">Divorced</option><option value="Widowed">Widowed</option></select></div>
+                <div class="form-group"><label>Nafasi katika Kwaya</label><select id="regLeadershipRole"><option value="Member">Member (Mwanachama)</option><option value="Sectional Leader">Sectional Leader (Kiongozi wa Sauti)</option><option value="Conductor">Conductor (Kondakta)</option><option value="Choir Master">Choir Master (Bwana Kwaya)</option><option value="Secretary">Secretary (Katibu)</option><option value="Treasurer">Treasurer (Mweka Hazina)</option></select></div>
+                <div class="form-group"><label>Picha ya Profile (Hiari)</label><input type="file" id="regProfilePic" accept="image/*"><div id="regProfilePreview" style="margin-top:10px;display:none"><img id="regProfilePreviewImg" style="width:70px;height:70px;border-radius:50%;object-fit:cover"></div></div>
+                <button id="doRegisterBtn" class="btn-cbe" style="width:100%">Jiunge Sasa</button>
+            </div>
         </div>
 
-        <!-- ADMIN DASHBOARD -->
         <div id="adminDashboardContent" style="display:none">
-            <div id="tab-dashboard" class="admin-tab"><div class="cbe-card" style="padding:24px;margin-bottom:24px"><h3 style="color:var(--cbe-green)">Admin Dashboard</h3><div id="statsGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:20px"></div></div></div>
-            <div id="tab-bible" class="admin-tab" style="display:none"><div class="cbe-card" style="padding:24px"><h3><i class="fas fa-bible"></i> Neno la Mungu la Siku</h3><div id="bibleVerseDisplay" class="bible-verse"><p>Loading...</p></div><button id="updateBibleVerseBtn" class="btn-cbe" style="margin-top:20px"><i class="fas fa-edit"></i> Badilisha Neno la Siku</button></div></div>
-            <div id="tab-calendar" class="admin-tab" style="display:none"><div class="cbe-card" style="padding:24px"><h3><i class="fas fa-calendar-alt"></i> Kalenda ya Matukio</h3><div id="calendar" class="calendar-container" style="margin-top:20px"></div><button id="addEventBtn" class="btn-cbe" style="margin-top:20px"><i class="fas fa-plus"></i> Ongeza Tukio</button></div></div>
-            <div id="tab-announcements" class="admin-tab" style="display:none"><div class="cbe-card" style="padding:24px"><h3><i class="fas fa-bullhorn"></i> Matangazo ya Kanisa</h3><div id="announcementsList"></div><button id="addAnnouncementBtn" class="btn-cbe" style="margin-top:20px"><i class="fas fa-plus"></i> Ongeza Tangazo</button></div></div>
-            <div id="tab-posters" class="admin-tab" style="display:none"><div class="cbe-card" style="padding:24px"><h3><i class="fas fa-images"></i> Poster za Kumtukuza Mungu (1080x1080)</h3><input type="file" id="posterFileInput" accept="image/*" style="margin:20px 0"><div id="posterPreviewContainer" style="display:none"><img id="posterPreviewImg" style="width:200px;border-radius:8px"></div><button id="uploadPosterBtn" class="btn-cbe"><i class="fas fa-cloud-upload-alt"></i> Pakia Poster</button><div id="postersList" style="margin-top:20px"></div></div></div>
-            <div id="tab-chat" class="admin-tab" style="display:none"><div class="cbe-card" style="padding:0;overflow:hidden"><div style="background:linear-gradient(135deg,var(--cbe-green),var(--sda-purple));padding:16px;color:white">TUCASA Group Chat</div><div class="chat-container"><div class="chat-messages" id="chatMessages"></div><div class="chat-input-area"><input type="text" id="chatInput" class="chat-input" placeholder="Andika ujumbe..."><button id="sendMessageBtn" class="btn-cbe" style="border-radius:50%;padding:12px 16px"><i class="fas fa-paper-plane"></i></button></div></div></div></div>
-            <div id="tab-attendance" class="admin-tab" style="display:none"><div class="cbe-card" style="padding:24px"><h3><i class="fas fa-calendar-check"></i> Mahudhurio ya Kanisa</h3><button id="markAttendanceBtn" class="btn-cbe" style="margin:20px 0"><i class="fas fa-check-circle"></i> Nimehudhuria Leo</button><div id="attendanceHistory"></div></div></div>
-            <div id="tab-songs" class="admin-tab" style="display:none"><div class="cbe-card" style="padding:24px"><div style="display:flex;justify-content:space-between;flex-wrap:wrap;margin-bottom:20px"><h3><i class="fas fa-music"></i> Maktaba ya Nyimbo</h3><button id="addSongBtn" class="btn-cbe">Ongeza Wimbo</button></div><div id="songsList"></div></div></div>
-            <div id="tab-reports" class="admin-tab" style="display:none"><div class="cbe-card" style="padding:24px"><h3><i class="fas fa-file-pdf"></i> Ripoti</h3><button id="exportPDFBtn" class="btn-cbe" style="margin:20px 0"><i class="fas fa-download"></i> Export Members PDF</button></div></div>
-            <div id="tab-members" class="admin-tab" style="display:none"><div class="cbe-card" style="padding:24px"><h3><i class="fas fa-users"></i> Usimamizi wa Wanachama</h3><input type="text" id="searchMember" placeholder="Tafuta mwanachama..." style="width:100%;padding:12px;margin:16px 0;border:1px solid #ddd;border-radius:8px"><div id="membersListAdmin"></div></div></div>
+            <div id="tab-dashboard" class="admin-tab"><div class="glass-card" style="padding:20px"><h3 style="color:var(--cbe-green)">Admin Dashboard</h3><div id="statsGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;margin-top:20px"></div></div></div>
+            <div id="tab-bible" class="admin-tab" style="display:none"><div class="glass-card" style="padding:20px"><h3><i class="fas fa-bible"></i> Neno la Mungu la Siku</h3><div id="bibleVerseDisplay" class="bible-verse" style="margin-top:20px"><p>Loading...</p></div><button id="updateBibleVerseBtn" class="btn-cbe" style="margin-top:20px"><i class="fas fa-edit"></i> Badilisha</button></div></div>
+            <div id="tab-calendar" class="admin-tab" style="display:none"><div class="glass-card" style="padding:20px"><h3><i class="fas fa-calendar-alt"></i> Kalenda</h3><div id="calendar" style="min-height:400px;margin-top:20px"></div><button id="addEventBtn" class="btn-cbe" style="margin-top:20px"><i class="fas fa-plus"></i> Ongeza Tukio</button></div></div>
+            <div id="tab-announcements" class="admin-tab" style="display:none"><div class="glass-card" style="padding:20px"><h3><i class="fas fa-bullhorn"></i> Matangazo</h3><div id="announcementsList"></div><button id="addAnnouncementBtn" class="btn-cbe" style="margin-top:20px"><i class="fas fa-plus"></i> Ongeza Tangazo</button></div></div>
+            <div id="tab-posters" class="admin-tab" style="display:none"><div class="glass-card" style="padding:20px"><h3><i class="fas fa-images"></i> Poster</h3><input type="file" id="posterFileInput" accept="image/*" style="margin:20px 0"><div id="posterPreviewContainer" style="display:none;margin-bottom:15px"><img id="posterPreviewImg" style="width:100px;border-radius:8px"></div><button id="uploadPosterBtn" class="btn-cbe"><i class="fas fa-cloud-upload-alt"></i> Pakia Poster</button><div id="postersList" style="margin-top:20px"></div></div></div>
+            <div id="tab-chat" class="admin-tab" style="display:none"><div class="glass-card" style="padding:0;overflow:hidden"><div style="background:linear-gradient(135deg,var(--cbe-green),var(--sda-purple));padding:12px;color:white">TUCASA Group Chat</div><div class="chat-container"><div class="chat-messages" id="chatMessages"></div><div class="chat-input-area"><input type="text" id="chatInput" class="chat-input" placeholder="Andika ujumbe..."><button id="sendMessageBtn" class="btn-cbe" style="border-radius:50%;padding:12px"><i class="fas fa-paper-plane"></i></button></div></div></div></div>
+            <div id="tab-attendance" class="admin-tab" style="display:none"><div class="glass-card" style="padding:20px"><h3><i class="fas fa-calendar-check"></i> Mahudhurio</h3><button id="markAttendanceBtn" class="btn-cbe" style="margin:20px 0">Nimehudhuria Leo</button><div id="attendanceHistory"></div></div></div>
+            <div id="tab-songs" class="admin-tab" style="display:none"><div class="glass-card" style="padding:20px"><div style="display:flex;justify-content:space-between;flex-wrap:wrap;margin-bottom:20px"><h3><i class="fas fa-music"></i> Nyimbo</h3><button id="addSongBtn" class="btn-cbe">Ongeza Wimbo</button></div><div id="songsList"></div></div></div>
+            <div id="tab-reports" class="admin-tab" style="display:none"><div class="glass-card" style="padding:20px"><h3><i class="fas fa-file-pdf"></i> Ripoti</h3><button id="exportPDFBtn" class="btn-cbe" style="margin:20px 0"><i class="fas fa-download"></i> Export PDF</button></div></div>
+            <div id="tab-members" class="admin-tab" style="display:none"><div class="glass-card" style="padding:20px"><h3><i class="fas fa-users"></i> Wanachama</h3><input type="text" id="searchMember" placeholder="Tafuta..." style="width:100%;padding:10px;margin:15px 0;border:1px solid #ddd;border-radius:12px"><div id="membersListAdmin" style="overflow-x:auto"></div></div></div>
         </div>
 
-        <!-- MEMBER DASHBOARD -->
         <div id="memberDashboardContent" style="display:none">
-            <div id="tab-member-dashboard" class="member-tab"><div class="cbe-card" style="padding:30px;margin-bottom:24px"><div style="display:flex;align-items:center;gap:25px;flex-wrap:wrap"><img id="memberProfileImg" src="https://via.placeholder.com/100" style="width:100px;height:100px;border-radius:50%;object-fit:cover;border:3px solid var(--cbe-gold)"><div><h2 id="memberFullName">Loading...</h2><p><i class="fas fa-envelope"></i> <span id="memberEmail"></span></p><p><i class="fas fa-phone"></i> <span id="memberPhone"></span></p><p><i class="fas fa-music"></i> Sauti: <span id="memberVoice"></span></p><p><i class="fas fa-heart"></i> Hali ya Ndoa: <span id="memberMarital"></span></p></div><div><button id="changeMemberPicBtn" class="btn-cbe">Badilisha Picha</button></div></div></div></div>
-            <div id="tab-member-bible" class="member-tab" style="display:none"><div class="cbe-card" style="padding:24px"><h3><i class="fas fa-bible"></i> Neno la Mungu la Siku</h3><div id="memberBibleVerseDisplay" class="bible-verse"><p>Loading...</p></div></div></div>
-            <div id="tab-member-calendar" class="member-tab" style="display:none"><div class="cbe-card" style="padding:24px"><h3><i class="fas fa-calendar-alt"></i> Kalenda ya Matukio</h3><div id="memberCalendar" class="calendar-container" style="margin-top:20px"></div></div></div>
-            <div id="tab-member-announcements" class="member-tab" style="display:none"><div class="cbe-card" style="padding:24px"><h3><i class="fas fa-bullhorn"></i> Matangazo</h3><div id="memberAnnouncementsList"></div></div></div>
-            <div id="tab-member-chat" class="member-tab" style="display:none"><div class="cbe-card" style="padding:0;overflow:hidden"><div style="background:linear-gradient(135deg,var(--cbe-green),var(--sda-purple));padding:16px;color:white">TUCASA Group Chat</div><div class="chat-container"><div class="chat-messages" id="memberChatMessages"></div><div class="chat-input-area"><input type="text" id="memberChatInput" class="chat-input" placeholder="Andika ujumbe..."><button id="memberSendMessageBtn" class="btn-cbe" style="border-radius:50%;padding:12px 16px"><i class="fas fa-paper-plane"></i></button></div></div></div></div>
-            <div id="tab-member-attendance" class="member-tab" style="display:none"><div class="cbe-card" style="padding:24px"><h3><i class="fas fa-calendar-check"></i> Historia ya Hudhurio</h3><button id="memberMarkAttendanceBtn" class="btn-cbe" style="margin:20px 0">Nimehudhuria Leo</button><div id="memberAttendanceHistory"></div></div></div>
-            <div id="tab-member-songs" class="member-tab" style="display:none"><div class="cbe-card" style="padding:24px"><h3><i class="fas fa-music"></i> Maktaba ya Nyimbo</h3><div id="memberSongsList"></div></div></div>
+            <div id="tab-member-dashboard" class="member-tab"><div class="glass-card" style="padding:20px"><div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap"><img id="memberProfileImg" src="https://via.placeholder.com/80" style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid var(--cbe-gold)"><div><h2 id="memberFullName" style="font-size:1.3rem">Loading...</h2><p><i class="fas fa-envelope"></i> <span id="memberEmail"></span></p><p><i class="fas fa-phone"></i> <span id="memberPhone"></span></p><p><i class="fas fa-music"></i> Sauti: <span id="memberVoice"></span></p><p><i class="fas fa-heart"></i> Ndoa: <span id="memberMarital"></span></p><p><i class="fas fa-user-tie"></i> Nafasi: <span id="memberLeadershipRole"></span></p></div><div><button id="changeMemberPicBtn" class="btn-cbe">Badilisha Picha</button></div></div></div></div>
+            <div id="tab-member-bible" class="member-tab" style="display:none"><div class="glass-card" style="padding:20px"><h3><i class="fas fa-bible"></i> Neno la Mungu</h3><div id="memberBibleVerseDisplay" class="bible-verse" style="margin-top:20px"><p>Loading...</p></div></div></div>
+            <div id="tab-member-calendar" class="member-tab" style="display:none"><div class="glass-card" style="padding:20px"><h3><i class="fas fa-calendar-alt"></i> Kalenda</h3><div id="memberCalendar" style="min-height:400px;margin-top:20px"></div></div></div>
+            <div id="tab-member-announcements" class="member-tab" style="display:none"><div class="glass-card" style="padding:20px"><h3><i class="fas fa-bullhorn"></i> Matangazo</h3><div id="memberAnnouncementsList"></div></div></div>
+            <div id="tab-member-chat" class="member-tab" style="display:none"><div class="glass-card" style="padding:0;overflow:hidden"><div style="background:linear-gradient(135deg,var(--cbe-green),var(--sda-purple));padding:12px;color:white">TUCASA Group Chat</div><div class="chat-container"><div class="chat-messages" id="memberChatMessages"></div><div class="chat-input-area"><input type="text" id="memberChatInput" class="chat-input" placeholder="Andika ujumbe..."><button id="memberSendMessageBtn" class="btn-cbe" style="border-radius:50%;padding:12px"><i class="fas fa-paper-plane"></i></button></div></div></div></div>
+            <div id="tab-member-attendance" class="member-tab" style="display:none"><div class="glass-card" style="padding:20px"><h3><i class="fas fa-calendar-check"></i> Historia</h3><button id="memberMarkAttendanceBtn" class="btn-cbe" style="margin:20px 0">Nimehudhuria Leo</button><div id="memberAttendanceHistory"></div></div></div>
+            <div id="tab-member-songs" class="member-tab" style="display:none"><div class="glass-card" style="padding:20px"><h3><i class="fas fa-music"></i> Nyimbo</h3><div id="memberSongsList"></div></div></div>
         </div>
     </div>
 
-    <div class="footer"><p>Developed by Gamaliel (Visionraj) | TUCASA CBE DSM | Seventh-day Adventist Church</p></div>
+    <div class="footer"><p><i class="fas fa-code"></i> Developed by Gamaliel (Visionraj) | TUCASA CBE DSM | Seventh-day Adventist Church</p></div>
 </div>
 
-<!-- MODALS -->
+<div id="posterUploadModal" class="modal"><div class="modal-content"><h3 style="color:var(--cbe-green)">Ongeza Poster</h3><input type="file" id="posterFile" accept="image/*" style="width:100%;padding:10px;margin:12px 0;border:1px solid #ddd;border-radius:8px"><div id="posterPreview" style="margin:10px 0;display:none"><img id="posterPreviewImg" style="width:100%;border-radius:8px"></div><button id="uploadPosterBtnModal" class="btn-cbe" style="width:100%">Pakia Poster</button><button id="closePosterUploadModal" class="btn-cbe btn-cbe-outline" style="width:100%;margin-top:8px">Funga</button></div></div>
 <div id="announcementModal" class="modal"><div class="modal-content"><h3>Ongeza Tangazo</h3><div class="form-group"><label>Kichwa</label><input type="text" id="announcementTitle"></div><div class="form-group"><label>Maelezo</label><textarea id="announcementDesc" rows="4"></textarea></div><div class="form-group"><label>Tarehe</label><input type="date" id="announcementDate"></div><button id="saveAnnouncementBtn" class="btn-cbe">Hifadhi</button><button id="closeAnnouncementModal" class="btn-cbe btn-cbe-outline" style="margin-top:8px">Funga</button></div></div>
-<div id="bibleVerseModal" class="modal"><div class="modal-content"><h3>Badilisha Neno la Siku</h3><div class="form-group"><label>Andiko la Biblia</label><textarea id="bibleVerseText" rows="3" placeholder="Mfano: Kwa maana ninyi ni watakatifu wa Bwana Mungu wenu..."></textarea></div><div class="form-group"><label>Rejea</label><input type="text" id="bibleVerseRef" placeholder="Mfano: Kumbukumbu 14:2"></div><button id="saveBibleVerseBtn" class="btn-cbe">Hifadhi</button><button id="closeBibleVerseModal" class="btn-cbe btn-cbe-outline" style="margin-top:8px">Funga</button></div></div>
-<div id="eventModal" class="modal"><div class="modal-content"><h3>Ongeza Tukio</h3><div class="form-group"><label>Jina la Tukio</label><input type="text" id="eventTitle"></div><div class="form-group"><label>Tarehe</label><input type="date" id="eventDate"></div><div class="form-group"><label>Maelezo</label><textarea id="eventDesc" rows="3"></textarea></div><button id="saveEventBtn" class="btn-cbe">Hifadhi</button><button id="closeEventModal" class="btn-cbe btn-cbe-outline" style="margin-top:8px">Funga</button></div></div>
-<div id="songModal" class="modal"><div class="modal-content"><h3>Ongeza Wimbo</h3><div class="form-group"><label>Jina la wimbo</label><input type="text" id="songTitle"></div><div class="form-group"><label>Nyimbo</label><textarea id="songLyrics" rows="8"></textarea></div><button id="saveSongBtn" class="btn-cbe">Hifadhi</button><button id="closeSongModal" class="btn-cbe btn-cbe-outline" style="margin-top:8px">Funga</button></div></div>
+<div id="bibleVerseModal" class="modal"><div class="modal-content"><h3>Badilisha Neno la Siku</h3><div class="form-group"><label>Andiko la Biblia</label><textarea id="bibleVerseText" rows="3"></textarea></div><div class="form-group"><label>Rejea</label><input type="text" id="bibleVerseRef"></div><button id="saveBibleVerseBtn" class="btn-cbe">Hifadhi</button><button id="closeBibleVerseModal" class="btn-cbe btn-cbe-outline" style="margin-top:8px">Funga</button></div></div>
+<div id="eventModal" class="modal"><div class="modal-content"><h3>Ongeza Tukio</h3><div class="form-group"><label>Jina</label><input type="text" id="eventTitle"></div><div class="form-group"><label>Tarehe</label><input type="date" id="eventDate"></div><div class="form-group"><label>Maelezo</label><textarea id="eventDesc" rows="3"></textarea></div><button id="saveEventBtn" class="btn-cbe">Hifadhi</button><button id="closeEventModal" class="btn-cbe btn-cbe-outline" style="margin-top:8px">Funga</button></div></div>
+<div id="songModal" class="modal"><div class="modal-content"><h3>Ongeza Wimbo</h3><div class="form-group"><label>Jina</label><input type="text" id="songTitle"></div><div class="form-group"><label>Nyimbo</label><textarea id="songLyrics" rows="8"></textarea></div><button id="saveSongBtn" class="btn-cbe">Hifadhi</button><button id="closeSongModal" class="btn-cbe btn-cbe-outline" style="margin-top:8px">Funga</button></div></div>
 <div id="editMemberModal" class="modal"><div class="modal-content"><h3>Hariri Mwanachama</h3><div id="editMemberForm"></div><button id="closeEditMemberModal" class="btn-cbe btn-cbe-outline" style="margin-top:8px">Funga</button></div></div>
-<div id="memberPicUploadModal" class="modal"><div class="modal-content"><h3>Badilisha Picha</h3><input type="file" id="memberPicFile" accept="image/*"><div id="memberPicPreview" style="margin-top:10px;display:none"><img id="memberPicPreviewImg" class="image-preview"></div><button id="uploadMemberPicBtn" class="btn-cbe">Badilisha Picha</button><button id="closeMemberPicModal" class="btn-cbe btn-cbe-outline" style="margin-top:8px">Funga</button></div></div>
+<div id="memberPicUploadModal" class="modal"><div class="modal-content"><h3>Badilisha Picha</h3><input type="file" id="memberPicFile" accept="image/*"><div id="memberPicPreview" style="margin-top:10px;display:none"><img id="memberPicPreviewImg" style="width:80px;height:80px;border-radius:50%;object-fit:cover"></div><button id="uploadMemberPicBtn" class="btn-cbe">Badilisha Picha</button><button id="closeMemberPicModal" class="btn-cbe btn-cbe-outline" style="margin-top:8px">Funga</button></div></div>
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 import { getFirestore, collection, doc, setDoc, getDoc, getDocs, updateDoc, query, orderBy, addDoc, serverTimestamp, onSnapshot, where, deleteDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
+// ============================================
+// 🔥 FIREBASE CONFIGURATION
+// ============================================
 const firebaseConfig = {
     apiKey: "AIzaSyBplg65MNJXO4Kre3tAnlGBQvMjxKlV-f4",
     authDomain: "tucasa-cbe-choir-2d995.firebaseapp.com",
@@ -200,9 +280,19 @@ const firebaseConfig = {
     appId: "1:578372140572:web:0db394e42d18edf872e9d9"
 };
 
-// CLOUDINARY CREDENTIALS - HAKIKISHA HIZI NI SAHIHI
+// ============================================
+// ☁️ CLOUDINARY CONFIGURATION
+// ============================================
 const CLOUD_NAME = "dsvfjzbpx";
 const UPLOAD_PRESET = "tucasa_uploads";
+
+// ============================================
+// 🖼️ PICHA ZA NDANI - ZIKO KWENYE FOLDER "images/"
+// ============================================
+// Hakikisha una folder "images" na picha:
+// - images/cbe-logo.png
+// - images/sda-logo.png
+// ============================================
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -216,147 +306,94 @@ let swiper = null;
 let adminCalendar = null;
 let memberCalendar = null;
 
-function showToast(msg, type='success') {
+function showToast(msg, type = 'success') {
     const toast = document.createElement('div');
-    toast.style.cssText = `position:fixed;bottom:20px;right:20px;background:${type==='error'?'#d32f2f':'#2e7d32'};color:white;padding:12px 24px;border-radius:8px;z-index:10002;font-size:14px`;
-    toast.innerHTML = `<i class="fas ${type==='error'?'fa-exclamation-triangle':'fa-check-circle'}"></i> ${msg}`;
+    toast.className = 'toast';
+    toast.style.background = type === 'error' ? '#d32f2f' : '#2e7d32';
+    toast.innerHTML = `<i class="fas ${type === 'error' ? 'fa-exclamation-triangle' : 'fa-check-circle'}"></i> ${msg}`;
     document.body.appendChild(toast);
     setTimeout(() => toast.remove(), 3500);
 }
 
-// CLOUDINARY UPLOAD FUNCTION - FIXED VERSION
 async function uploadToCloudinary(file) {
     return new Promise((resolve, reject) => {
-        if(!file) { reject("Hakuna file"); return; }
-        if(file.size > 2 * 1024 * 1024) { reject("Picha kubwa kuliko 2MB"); return; }
-        if(!file.type.startsWith('image/')) { reject("Chagua picha tu"); return; }
-        
+        if (!file) { reject("No file"); return; }
+        if (file.size > 2 * 1024 * 1024) { reject("File too large (max 2MB)"); return; }
+        if (!file.type.startsWith('image/')) { reject("Only images allowed"); return; }
         const formData = new FormData();
         formData.append('file', file);
         formData.append('upload_preset', UPLOAD_PRESET);
-        formData.append('cloud_name', CLOUD_NAME);
-        
-        console.log("Uploading to Cloudinary...");
-        console.log("Cloud Name:", CLOUD_NAME);
-        console.log("Preset:", UPLOAD_PRESET);
-        console.log("File name:", file.name);
-        console.log("File size:", file.size);
-        
-        fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
-            method: 'POST',
-            mode: 'cors',
-            body: formData
-        })
-        .then(response => {
-            console.log("Response status:", response.status);
-            if(!response.ok) {
-                return response.json().then(err => { throw new Error(err.error?.message || "Upload failed"); });
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log("Cloudinary response:", data);
-            if(data.secure_url) {
-                console.log("Upload success! URL:", data.secure_url);
-                resolve(data.secure_url);
-            } else {
-                reject("Cloudinary haikurudisha URL");
-            }
-        })
-        .catch(error => {
-            console.error("Upload error:", error);
-            reject(error.message);
-        });
+        fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, { method: 'POST', body: formData })
+            .then(res => res.json())
+            .then(data => { if (data.secure_url) resolve(data.secure_url); else reject("Upload failed"); })
+            .catch(err => reject(err.message));
     });
 }
 
-// Load Posters
 async function loadPosters() {
     try {
         const snapshot = await getDocs(collection(db, "posters"));
         const posters = [];
-        snapshot.forEach(doc => { const data = doc.data(); if(data.url) posters.push({ id: doc.id, url: data.url }); });
-        
-        // Update slider
+        snapshot.forEach(doc => { const data = doc.data(); if (data.url) posters.push({ id: doc.id, url: data.url }); });
         const wrapper = document.getElementById('posterWrapper');
-        if(posters.length > 0) {
-            wrapper.innerHTML = posters.map(p => `<div class="swiper-slide"><img src="${p.url}" alt="Poster" style="width:100%;height:500px;object-fit:cover"></div>`).join('');
-        }
-        if(swiper) swiper.destroy(true, true);
+        if (posters.length > 0) wrapper.innerHTML = posters.map(p => `<div class="swiper-slide"><img src="${p.url}" alt="Poster"></div>`).join('');
+        else wrapper.innerHTML = `<div class="swiper-slide"><img src="https://picsum.photos/1080/1080?random=1"></div><div class="swiper-slide"><img src="https://picsum.photos/1080/1080?random=2"></div><div class="swiper-slide"><img src="https://picsum.photos/1080/1080?random=3"></div>`;
+        if (swiper) swiper.destroy(true, true);
         swiper = new Swiper('.poster-slider', { loop: true, autoplay: { delay: 5000 }, pagination: { el: '.swiper-pagination' }, navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' } });
-        
-        // Update posters list for admin
         const postersList = document.getElementById('postersList');
-        if(postersList && isAdmin) {
-            postersList.innerHTML = `<h4>Posters Zilizopo:</h4>${posters.map(p => `<div style="display:flex;justify-content:space-between;align-items:center;margin:10px 0;padding:10px;background:#f5f5f5;border-radius:8px"><img src="${p.url}" style="width:60px;height:60px;border-radius:8px;object-fit:cover"><span style="flex:1;margin-left:10px">${p.url.substring(0,50)}...</span><button class="btn-cbe btn-sm" onclick='deletePoster("${p.id}")' style="background:#ef4444"><i class="fas fa-trash"></i></button></div>`).join('')}`;
+        if (postersList && isAdmin) {
+            postersList.innerHTML = `<h4>Posters Zilizopo:</h4>${posters.map(p => `<div style="display:flex;justify-content:space-between;align-items:center;margin:10px 0;padding:10px;background:#f5f5f5;border-radius:12px"><img src="${p.url}" style="width:50px;height:50px;border-radius:8px;object-fit:cover"><span style="flex:1;margin-left:10px;font-size:12px">${p.url.substring(0,40)}...</span><button class="btn-cbe" style="background:#ef4444;padding:5px 12px" onclick='deletePoster("${p.id}")'><i class="fas fa-trash"></i></button></div>`).join('')}`;
         }
-    } catch(e) { console.log(e); }
+    } catch (e) { console.log(e); }
 }
 
-window.deletePoster = async (id) => {
-    if(confirm("Futa poster hii?")) { await deleteDoc(doc(db, "posters", id)); loadPosters(); showToast("Poster imefutwa"); }
-};
+window.deletePoster = async (id) => { if (confirm("Futa poster hii?")) { await deleteDoc(doc(db, "posters", id)); loadPosters(); showToast("Poster imefutwa"); } };
 
-// Load Bible Verse
 async function loadBibleVerse() {
     const snapshot = await getDocs(collection(db, "bibleVerse"));
     let verse = { text: "Bwana ndiye mchungaji wangu, sitapungukiwa na kitu chochote.", reference: "Zaburi 23:1" };
     snapshot.forEach(doc => verse = doc.data());
     const html = `<h3><i class="fas fa-bible"></i> Neno la Mungu Leo</h3><p>"${verse.text}"</p><small>— ${verse.reference} —</small>`;
-    if(document.getElementById('bibleVerseDisplay')) document.getElementById('bibleVerseDisplay').innerHTML = html;
-    if(document.getElementById('memberBibleVerseDisplay')) document.getElementById('memberBibleVerseDisplay').innerHTML = html;
+    if (document.getElementById('bibleVerseDisplay')) document.getElementById('bibleVerseDisplay').innerHTML = html;
+    if (document.getElementById('memberBibleVerseDisplay')) document.getElementById('memberBibleVerseDisplay').innerHTML = html;
 }
 
-// Load Announcements
 async function loadAnnouncements() {
     const q = query(collection(db, "announcements"), orderBy("date", "desc"));
     const snapshot = await getDocs(q);
     const announcements = [];
     snapshot.forEach(doc => announcements.push({ id: doc.id, ...doc.data() }));
-    const html = announcements.map(a => `<div class="announcement-item"><div><strong>${a.title}</strong><br><small>${a.date || ''}</small><p>${a.description}</p></div>${isAdmin ? `<button class="btn-cbe btn-sm" onclick='deleteAnnouncement("${a.id}")' style="background:#ef4444"><i class="fas fa-trash"></i></button>` : ''}</div>`).join('');
-    if(document.getElementById('announcementsList')) document.getElementById('announcementsList').innerHTML = html || "<p>Hakuna matangazo</p>";
-    if(document.getElementById('memberAnnouncementsList')) document.getElementById('memberAnnouncementsList').innerHTML = html || "<p>Hakuna matangazo</p>";
+    const html = announcements.map(a => `<div style="display:flex;justify-content:space-between;align-items:center;padding:12px;border-bottom:1px solid #eee"><div><strong>${a.title}</strong><br><small>${a.date || ''}</small><p style="margin-top:5px">${a.description}</p></div>${isAdmin ? `<button class="btn-cbe" style="background:#ef4444;padding:5px 12px" onclick='deleteAnnouncement("${a.id}")'><i class="fas fa-trash"></i></button>` : ''}</div>`).join('');
+    if (document.getElementById('announcementsList')) document.getElementById('announcementsList').innerHTML = html || "<p>Hakuna matangazo</p>";
+    if (document.getElementById('memberAnnouncementsList')) document.getElementById('memberAnnouncementsList').innerHTML = html || "<p>Hakuna matangazo</p>";
 }
 
 window.deleteAnnouncement = async (id) => { await deleteDoc(doc(db, "announcements", id)); loadAnnouncements(); showToast("Tangazo limefutwa"); };
 
-// Load Calendar
 async function loadCalendarEvents(isAdminView = false) {
     const snapshot = await getDocs(collection(db, "events"));
     const events = [];
     snapshot.forEach(doc => { const data = doc.data(); events.push({ id: doc.id, title: data.title, start: data.date, description: data.description }); });
-    
     const calendarEl = document.getElementById('calendar');
     const memberCalendarEl = document.getElementById('memberCalendar');
-    
-    if(calendarEl && isAdminView) {
-        if(adminCalendar) adminCalendar.destroy();
-        adminCalendar = new FullCalendar.Calendar(calendarEl, { initialView: 'dayGridMonth', events: events, height: 500 });
-        adminCalendar.render();
-    }
-    if(memberCalendarEl && !isAdminView) {
-        if(memberCalendar) memberCalendar.destroy();
-        memberCalendar = new FullCalendar.Calendar(memberCalendarEl, { initialView: 'dayGridMonth', events: events, height: 500 });
-        memberCalendar.render();
-    }
+    if (calendarEl && isAdminView) { if (adminCalendar) adminCalendar.destroy(); adminCalendar = new FullCalendar.Calendar(calendarEl, { initialView: 'dayGridMonth', events: events, height: 450 }); adminCalendar.render(); }
+    if (memberCalendarEl && !isAdminView) { if (memberCalendar) memberCalendar.destroy(); memberCalendar = new FullCalendar.Calendar(memberCalendarEl, { initialView: 'dayGridMonth', events: events, height: 450 }); memberCalendar.render(); }
 }
 
-// Chat
 function initRealtimeChat() {
-    if(unsubscribeChat) unsubscribeChat();
+    if (unsubscribeChat) unsubscribeChat();
     const q = query(collection(db, "messages"), orderBy("timestamp", "asc"));
     unsubscribeChat = onSnapshot(q, (snapshot) => {
         const messages = [];
         snapshot.forEach(doc => messages.push(doc.data()));
         const html = messages.map(msg => `<div class="message ${msg.senderId === currentUser?.uid ? 'message-sent' : 'message-received'}"><div class="message-sender">${msg.senderName || msg.senderEmail}</div><div>${escapeHtml(msg.text)}</div><div class="message-time">${msg.timestamp ? new Date(msg.timestamp.toDate()).toLocaleTimeString() : ''}</div></div>`).join('');
-        if(document.getElementById('chatMessages')) document.getElementById('chatMessages').innerHTML = html;
-        if(document.getElementById('memberChatMessages')) document.getElementById('memberChatMessages').innerHTML = html;
+        if (document.getElementById('chatMessages')) document.getElementById('chatMessages').innerHTML = html;
+        if (document.getElementById('memberChatMessages')) document.getElementById('memberChatMessages').innerHTML = html;
     });
 }
 
 function escapeHtml(text) { const div = document.createElement('div'); div.textContent = text; return div.innerHTML; }
 
-// Members Management
 function initAdminMembers() {
     const q = query(collection(db, "members"), orderBy("createdAt", "desc"));
     onSnapshot(q, (snapshot) => {
@@ -369,54 +406,50 @@ function initAdminMembers() {
 
 function renderMembersList(members) {
     const container = document.getElementById('membersListAdmin');
-    if(!container) return;
+    if (!container) return;
     const searchTerm = document.getElementById('searchMember')?.value.toLowerCase() || '';
     const filtered = members.filter(m => (m.fullName || m.email || '').toLowerCase().includes(searchTerm));
-    container.innerHTML = `<table class="cbe-table"><thead><tr><th>Picha</th><th>Jina</th><th>Sauti</th><th>Simu</th><th>Role</th><th>Vitendo</th></tr></thead><tbody>${filtered.map(m => `<tr><td>${m.profilePictureUrl ? `<img src="${m.profilePictureUrl}" style="width:40px;height:40px;border-radius:50%;object-fit:cover">` : `<div class="profile-icon" style="width:40px;height:40px;font-size:16px">${(m.fullName || 'U')[0]}</div>`}</td><td><strong>${m.fullName || m.email}</strong><br><small>${m.email || ''}</small></td><td>${m.voicePart || '-'}</td><td>${m.phone || '-'}</td><td><span class="sda-badge" style="background:${m.role === 'admin' ? '#ffc107' : 'var(--cbe-green)'}">${m.role === 'admin' ? 'Admin' : 'Member'}</span></td><td><button class="btn-cbe btn-sm" onclick='editMember("${m.id}")'><i class="fas fa-edit"></i></button> ${m.role !== 'admin' ? `<button class="btn-cbe btn-sm" style="background:#ff9800" onclick='makeAdmin("${m.id}")'><i class="fas fa-crown"></i> Make Admin</button>` : ''}</td></tr>`).join('')}</tbody></table>`;
+    container.innerHTML = `<table class="cbe-table"><thead><tr><th>Picha</th><th>Jina</th><th>Sauti</th><th>Simu</th><th>Nafasi</th><th>Role</th><th>Vitendo</th></tr></thead><tbody>${filtered.map(m => `<tr><td>${m.profilePictureUrl ? `<img src="${m.profilePictureUrl}" style="width:35px;height:35px;border-radius:50%;object-fit:cover">` : `<div class="profile-icon" style="width:35px;height:35px;font-size:14px">${(m.fullName || 'U')[0]}</div>`}</td><td><strong>${m.fullName || m.email}</strong><br><small>${m.email || ''}</small></td><td>${m.voicePart || '-'}</td><td>${m.phone || '-'}</td><td>${m.leadershipRole || 'Member'} ${m.leadershipRole && m.leadershipRole !== 'Member' ? '<span class="leader-badge">LEADER</span>' : ''}</td><td><span style="background:${m.role === 'admin' ? '#ffc107' : '#2e7d32'};color:white;padding:4px 10px;border-radius:20px;font-size:11px">${m.role === 'admin' ? 'Admin' : 'Member'}</span></td><td><button class="btn-cbe" style="padding:5px 12px;font-size:11px" onclick='editMember("${m.id}")'><i class="fas fa-edit"></i></button> ${m.role !== 'admin' ? `<button class="btn-cbe" style="background:#ff9800;padding:5px 12px;font-size:11px;margin-left:5px" onclick='makeAdmin("${m.id}")'><i class="fas fa-crown"></i></button>` : ''}</td></tr>`).join('')}</tbody></table>`;
 }
 
 window.editMember = async (id) => {
     const docSnap = await getDoc(doc(db, "members", id));
-    if(docSnap.exists()) {
+    if (docSnap.exists()) {
         const d = docSnap.data();
-        document.getElementById('editMemberForm').innerHTML = `<div class="form-group"><label>Jina</label><input id="editName" value="${d.fullName || ''}"></div><div class="form-group"><label>Sauti</label><select id="editVoice"><option ${d.voicePart==='Soprano'?'selected':''}>Soprano</option><option ${d.voicePart==='Alto'?'selected':''}>Alto</option><option ${d.voicePart==='Tenor'?'selected':''}>Tenor</option><option ${d.voicePart==='Bass'?'selected':''}>Bass</option></select></div><div class="form-group"><label>Simu</label><input id="editPhone" value="${d.phone || ''}"></div><div class="form-group"><label>Hali ya Ndoa</label><select id="editMarital"><option ${d.maritalStatus==='Single'?'selected':''}>Single</option><option ${d.maritalStatus==='Married'?'selected':''}>Married</option><option ${d.maritalStatus==='Divorced'?'selected':''}>Divorced</option><option ${d.maritalStatus==='Widowed'?'selected':''}>Widowed</option></select></div><button id="saveEdit" class="btn-cbe">Hifadhi</button>`;
+        document.getElementById('editMemberForm').innerHTML = `<div class="form-group"><label>Jina</label><input id="editName" value="${d.fullName || ''}"></div><div class="form-group"><label>Sauti</label><select id="editVoice"><option ${d.voicePart === 'Soprano' ? 'selected' : ''}>Soprano</option><option ${d.voicePart === 'Alto' ? 'selected' : ''}>Alto</option><option ${d.voicePart === 'Tenor' ? 'selected' : ''}>Tenor</option><option ${d.voicePart === 'Bass' ? 'selected' : ''}>Bass</option></select></div><div class="form-group"><label>Simu</label><input id="editPhone" value="${d.phone || ''}"></div><div class="form-group"><label>Nafasi</label><select id="editLeadership"><option ${d.leadershipRole === 'Member' ? 'selected' : ''}>Member</option><option ${d.leadershipRole === 'Sectional Leader' ? 'selected' : ''}>Sectional Leader</option><option ${d.leadershipRole === 'Conductor' ? 'selected' : ''}>Conductor</option><option ${d.leadershipRole === 'Choir Master' ? 'selected' : ''}>Choir Master</option><option ${d.leadershipRole === 'Secretary' ? 'selected' : ''}>Secretary</option><option ${d.leadershipRole === 'Treasurer' ? 'selected' : ''}>Treasurer</option></select></div><div class="form-group"><label>Hali ya Ndoa</label><select id="editMarital"><option ${d.maritalStatus === 'Single' ? 'selected' : ''}>Single</option><option ${d.maritalStatus === 'Married' ? 'selected' : ''}>Married</option><option ${d.maritalStatus === 'Divorced' ? 'selected' : ''}>Divorced</option><option ${d.maritalStatus === 'Widowed' ? 'selected' : ''}>Widowed</option></select></div><button id="saveEdit" class="btn-cbe">Hifadhi</button>`;
         document.getElementById('editMemberModal').style.display = 'flex';
         document.getElementById('saveEdit').onclick = async () => {
-            await updateDoc(doc(db, "members", id), { fullName: document.getElementById('editName').value, voicePart: document.getElementById('editVoice').value, phone: document.getElementById('editPhone').value, maritalStatus: document.getElementById('editMarital').value });
+            await updateDoc(doc(db, "members", id), { fullName: document.getElementById('editName').value, voicePart: document.getElementById('editVoice').value, phone: document.getElementById('editPhone').value, leadershipRole: document.getElementById('editLeadership').value, maritalStatus: document.getElementById('editMarital').value });
             showToast("Taarifa zimebadilishwa!");
             document.getElementById('editMemberModal').style.display = 'none';
         };
     }
 };
 
-window.makeAdmin = async (id) => {
-    if(confirm("Una hakika kumfanya mwanachama huyu kuwa Admin?")) { await updateDoc(doc(db, "members", id), { role: "admin" }); showToast("Sasa ni Admin!"); }
-};
+window.makeAdmin = async (id) => { if (confirm("Una hakika?")) { await updateDoc(doc(db, "members", id), { role: "admin" }); showToast("Sasa ni Admin!"); } };
 
 function updateStats(members) {
-    const stats = { total: members.length, Soprano:0, Alto:0, Tenor:0, Bass:0 };
-    members.forEach(m => { if(stats[m.voicePart] !== undefined) stats[m.voicePart]++; });
-    document.getElementById('statsGrid').innerHTML = `<div class="stat-card" style="background:linear-gradient(135deg,var(--cbe-green),var(--sda-purple));color:white"><h2>${stats.total}</h2><p>Wanachama</p></div><div class="stat-card"><h3>${stats.Soprano}</h3><p>Soprano</p></div><div class="stat-card"><h3>${stats.Alto}</h3><p>Alto</p></div><div class="stat-card"><h3>${stats.Tenor}</h3><p>Tenor</p></div><div class="stat-card"><h3>${stats.Bass}</h3><p>Bass</p></div>`;
+    const stats = { total: members.length, Soprano: 0, Alto: 0, Tenor: 0, Bass: 0 };
+    members.forEach(m => { if (stats[m.voicePart] !== undefined) stats[m.voicePart]++; });
+    document.getElementById('statsGrid').innerHTML = `<div class="stat-card" style="background:linear-gradient(135deg,var(--cbe-green),var(--sda-purple));color:white"><h2>${stats.total}</h2><p>Wanachama</p></div><div class="stat-card"><h2>${stats.Soprano}</h2><p>Soprano</p></div><div class="stat-card"><h2>${stats.Alto}</h2><p>Alto</p></div><div class="stat-card"><h2>${stats.Tenor}</h2><p>Tenor</p></div><div class="stat-card"><h2>${stats.Bass}</h2><p>Bass</p></div>`;
 }
 
-// Songs
 function initSongs() {
     const q = query(collection(db, "songs"), orderBy("createdAt", "desc"));
     onSnapshot(q, (snapshot) => {
         const songs = [];
         snapshot.forEach(doc => songs.push(doc.data()));
-        const html = songs.map(s => `<div class="cbe-card" style="padding:16px;margin-bottom:12px"><h4 style="color:var(--cbe-green)"><i class="fas fa-music"></i> ${s.title}</h4><p style="margin-top:8px;white-space:pre-wrap">${s.lyrics || 'Hakuna nyimbo'}</p></div>`).join('');
-        if(document.getElementById('songsList')) document.getElementById('songsList').innerHTML = html;
-        if(document.getElementById('memberSongsList')) document.getElementById('memberSongsList').innerHTML = html;
+        const html = songs.map(s => `<div class="glass-card" style="padding:15px;margin-bottom:12px"><h4 style="color:var(--cbe-green)"><i class="fas fa-music"></i> ${s.title}</h4><p style="margin-top:8px;white-space:pre-wrap">${s.lyrics || 'Hakuna nyimbo'}</p></div>`).join('');
+        if (document.getElementById('songsList')) document.getElementById('songsList').innerHTML = html;
+        if (document.getElementById('memberSongsList')) document.getElementById('memberSongsList').innerHTML = html;
     });
 }
 
-// Attendance
 async function markAttendance() {
     const today = new Date().toISOString().split('T')[0];
     const q = query(collection(db, "attendance"), where("userId", "==", currentUser.uid), where("date", "==", today));
     const existing = await getDocs(q);
-    if(!existing.empty) { showToast("Umeshatuma leo!", 'error'); return; }
+    if (!existing.empty) { showToast("Umeshatuma leo!", 'error'); return; }
     await addDoc(collection(db, "attendance"), { userId: currentUser.uid, userName: currentUserData?.fullName || currentUser.email, date: today, timestamp: serverTimestamp() });
     showToast("Mahudhurio yameerekodiwa!");
     loadAttendance();
@@ -428,8 +461,8 @@ async function loadAttendance() {
     const history = [];
     snapshot.forEach(doc => history.push(doc.data()));
     const html = `<h4>Historia</h4><ul>${history.map(h => `<li><i class="fas fa-check-circle" style="color:var(--cbe-green)"></i> ${h.date}</li>`).join('')}</ul>`;
-    if(document.getElementById('attendanceHistory')) document.getElementById('attendanceHistory').innerHTML = html;
-    if(document.getElementById('memberAttendanceHistory')) document.getElementById('memberAttendanceHistory').innerHTML = html;
+    if (document.getElementById('attendanceHistory')) document.getElementById('attendanceHistory').innerHTML = html;
+    if (document.getElementById('memberAttendanceHistory')) document.getElementById('memberAttendanceHistory').innerHTML = html;
 }
 
 async function exportPDF() {
@@ -441,243 +474,70 @@ async function exportPDF() {
     const members = [];
     q.forEach(d => members.push(d.data()));
     let y = 40;
-    members.forEach((m,i) => { doc.text(`${i+1}. ${m.fullName || m.email} - ${m.voicePart || '-'}`, 14, y); y+=10; });
+    members.forEach((m, i) => { doc.text(`${i + 1}. ${m.fullName || m.email} - ${m.voicePart || '-'}`, 14, y); y += 10; });
     doc.save("TUCASA_Members.pdf");
     showToast("PDF imetengenezwa!");
 }
 
 async function loadMemberProfile() {
-    if(currentUserData) {
+    if (currentUserData) {
         document.getElementById('memberFullName').innerText = currentUserData.fullName || currentUser.email;
         document.getElementById('memberEmail').innerText = currentUser.email;
         document.getElementById('memberPhone').innerText = currentUserData.phone || '-';
         document.getElementById('memberVoice').innerText = currentUserData.voicePart || '-';
         document.getElementById('memberMarital').innerText = currentUserData.maritalStatus || 'Single';
-        if(currentUserData.profilePictureUrl) document.getElementById('memberProfileImg').src = currentUserData.profilePictureUrl;
+        document.getElementById('memberLeadershipRole').innerText = currentUserData.leadershipRole || 'Member';
+        if (currentUserData.profilePictureUrl) document.getElementById('memberProfileImg').src = currentUserData.profilePictureUrl;
     }
 }
 
 function switchAdminTab(tabId) {
     document.querySelectorAll('.admin-tab').forEach(t => t.style.display = 'none');
     const el = document.getElementById(`tab-${tabId}`);
-    if(el) el.style.display = 'block';
-    if(tabId === 'calendar') setTimeout(() => loadCalendarEvents(true), 100);
+    if (el) el.style.display = 'block';
+    if (tabId === 'calendar') setTimeout(() => loadCalendarEvents(true), 100);
 }
 
 function switchMemberTab(tabId) {
     document.querySelectorAll('.member-tab').forEach(t => t.style.display = 'none');
     const el = document.getElementById(`tab-member-${tabId}`);
-    if(el) el.style.display = 'block';
-    if(tabId === 'calendar') setTimeout(() => loadCalendarEvents(false), 100);
+    if (el) el.style.display = 'block';
+    if (tabId === 'calendar') setTimeout(() => loadCalendarEvents(false), 100);
 }
 
-// EVENT LISTENERS
-document.getElementById('showLoginBtn')?.addEventListener('click', () => { document.getElementById('loginForm').style.display='block'; document.getElementById('registerForm').style.display='none'; });
-document.getElementById('showRegisterBtn')?.addEventListener('click', () => { document.getElementById('loginForm').style.display='none'; document.getElementById('registerForm').style.display='block'; });
-document.getElementById('doLoginBtn')?.addEventListener('click', async () => { try { await signInWithEmailAndPassword(auth, document.getElementById('loginEmail').value, document.getElementById('loginPassword').value); showToast("Karibu!"); } catch(e) { showToast(e.message, 'error'); } });
-
-document.getElementById('doRegisterBtn')?.addEventListener('click', async () => {
-    try {
-        const cred = await createUserWithEmailAndPassword(auth, document.getElementById('regEmail').value, document.getElementById('regPassword').value);
-        let profileUrl = null;
-        const picFile = document.getElementById('regProfilePic').files[0];
-        if(picFile) {
-            showToast("Inapakia picha...");
-            profileUrl = await uploadToCloudinary(picFile);
-        }
-        await setDoc(doc(db, "members", cred.user.uid), {
-            fullName: document.getElementById('regFullName').value,
-            email: document.getElementById('regEmail').value,
-            phone: document.getElementById('regPhone').value,
-            voicePart: document.getElementById('regVoicePart').value,
-            maritalStatus: document.getElementById('regMaritalStatus').value,
-            profilePictureUrl: profileUrl,
-            joinDate: new Date().toISOString().split('T')[0],
-            role: "member",
-            createdAt: new Date().toISOString()
-        });
-        showToast("Umesajiliwa! Ingia sasa.");
-        document.getElementById('showLoginBtn').click();
-    } catch(e) { showToast(e.message, 'error'); }
-});
-
+// Event Listeners
+document.getElementById('showLoginBtn')?.addEventListener('click', () => { document.getElementById('loginForm').style.display = 'block'; document.getElementById('registerForm').style.display = 'none'; });
+document.getElementById('showRegisterBtn')?.addEventListener('click', () => { document.getElementById('loginForm').style.display = 'none'; document.getElementById('registerForm').style.display = 'block'; });
+document.getElementById('doLoginBtn')?.addEventListener('click', async () => { try { await signInWithEmailAndPassword(auth, document.getElementById('loginEmail').value, document.getElementById('loginPassword').value); showToast("Karibu!"); } catch (e) { showToast(e.message, 'error'); } });
+document.getElementById('doRegisterBtn')?.addEventListener('click', async () => { try { const cred = await createUserWithEmailAndPassword(auth, document.getElementById('regEmail').value, document.getElementById('regPassword').value); let profileUrl = null; const picFile = document.getElementById('regProfilePic').files[0]; if (picFile) profileUrl = await uploadToCloudinary(picFile); await setDoc(doc(db, "members", cred.user.uid), { fullName: document.getElementById('regFullName').value, email: document.getElementById('regEmail').value, phone: document.getElementById('regPhone').value, voicePart: document.getElementById('regVoicePart').value, maritalStatus: document.getElementById('regMaritalStatus').value, leadershipRole: document.getElementById('regLeadershipRole').value, profilePictureUrl: profileUrl, joinDate: new Date().toISOString().split('T')[0], role: "member", createdAt: new Date().toISOString() }); showToast("Umesajiliwa! Ingia sasa."); document.getElementById('showLoginBtn').click(); } catch (e) { showToast(e.message, 'error'); } });
 document.getElementById('logoutBtn')?.addEventListener('click', async () => { await signOut(auth); location.reload(); });
-
-// Chat send
-document.getElementById('sendMessageBtn')?.addEventListener('click', async () => {
-    const text = document.getElementById('chatInput').value;
-    if(text.trim()) {
-        await addDoc(collection(db, "messages"), { text, senderId: currentUser.uid, senderName: currentUserData?.fullName || currentUser.email, senderEmail: currentUser.email, timestamp: serverTimestamp() });
-        document.getElementById('chatInput').value = '';
-    }
-});
-
-document.getElementById('memberSendMessageBtn')?.addEventListener('click', async () => {
-    const text = document.getElementById('memberChatInput').value;
-    if(text.trim()) {
-        await addDoc(collection(db, "messages"), { text, senderId: currentUser.uid, senderName: currentUserData?.fullName || currentUser.email, senderEmail: currentUser.email, timestamp: serverTimestamp() });
-        document.getElementById('memberChatInput').value = '';
-    }
-});
-
-// Attendance
+document.getElementById('sendMessageBtn')?.addEventListener('click', async () => { const text = document.getElementById('chatInput').value; if (text.trim()) { await addDoc(collection(db, "messages"), { text, senderId: currentUser.uid, senderName: currentUserData?.fullName || currentUser.email, senderEmail: currentUser.email, timestamp: serverTimestamp() }); document.getElementById('chatInput').value = ''; } });
+document.getElementById('memberSendMessageBtn')?.addEventListener('click', async () => { const text = document.getElementById('memberChatInput').value; if (text.trim()) { await addDoc(collection(db, "messages"), { text, senderId: currentUser.uid, senderName: currentUserData?.fullName || currentUser.email, senderEmail: currentUser.email, timestamp: serverTimestamp() }); document.getElementById('memberChatInput').value = ''; } });
 document.getElementById('markAttendanceBtn')?.addEventListener('click', markAttendance);
 document.getElementById('memberMarkAttendanceBtn')?.addEventListener('click', markAttendance);
 document.getElementById('exportPDFBtn')?.addEventListener('click', exportPDF);
 document.getElementById('searchMember')?.addEventListener('input', () => initAdminMembers());
-
-// Add Poster Button - FIXED CLOUDINARY UPLOAD
-document.getElementById('uploadPosterBtn')?.addEventListener('click', async () => {
-    const fileInput = document.getElementById('posterFileInput');
-    const file = fileInput.files[0];
-    if(!file) { showToast("Chagua picha ya poster", 'error'); return; }
-    
-    const btn = document.getElementById('uploadPosterBtn');
-    const originalText = btn.innerHTML;
-    btn.innerHTML = '<span class="loading"></span> Inapakia...';
-    btn.disabled = true;
-    
-    try {
-        const url = await uploadToCloudinary(file);
-        console.log("Poster URL received:", url);
-        await addDoc(collection(db, "posters"), { url, createdAt: serverTimestamp() });
-        showToast("Poster imeongezwa!");
-        fileInput.value = '';
-        document.getElementById('posterPreviewContainer').style.display = 'none';
-        await loadPosters();
-    } catch(error) {
-        console.error("Upload error:", error);
-        showToast("Error: " + error, 'error');
-    } finally {
-        btn.innerHTML = originalText;
-        btn.disabled = false;
-    }
-});
-
-// Preview poster
-document.getElementById('posterFileInput')?.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    if(file) {
-        const reader = new FileReader();
-        reader.onload = (ev) => {
-            document.getElementById('posterPreviewImg').src = ev.target.result;
-            document.getElementById('posterPreviewContainer').style.display = 'block';
-        };
-        reader.readAsDataURL(file);
-    }
-});
-
-// Add Announcement
+document.getElementById('addPosterBtn')?.addEventListener('click', () => document.getElementById('posterUploadModal').style.display = 'flex');
+document.getElementById('uploadPosterBtnModal')?.addEventListener('click', async () => { const file = document.getElementById('posterFile').files[0]; if (!file) { showToast("Chagua picha", 'error'); return; } const btn = document.getElementById('uploadPosterBtnModal'); const original = btn.innerHTML; btn.innerHTML = '<span class="loading"></span> Inapakia...'; btn.disabled = true; try { const url = await uploadToCloudinary(file); await addDoc(collection(db, "posters"), { url, createdAt: serverTimestamp() }); showToast("Poster imeongezwa!"); document.getElementById('posterUploadModal').style.display = 'none'; document.getElementById('posterFile').value = ''; document.getElementById('posterPreview').style.display = 'none'; await loadPosters(); } catch (e) { showToast(e, 'error'); } finally { btn.innerHTML = original; btn.disabled = false; } });
 document.getElementById('addAnnouncementBtn')?.addEventListener('click', () => document.getElementById('announcementModal').style.display = 'flex');
-document.getElementById('saveAnnouncementBtn')?.addEventListener('click', async () => {
-    const title = document.getElementById('announcementTitle').value;
-    const description = document.getElementById('announcementDesc').value;
-    const date = document.getElementById('announcementDate').value;
-    if(title && description) {
-        await addDoc(collection(db, "announcements"), { title, description, date, createdAt: serverTimestamp() });
-        showToast("Tangazo limeongezwa!");
-        document.getElementById('announcementModal').style.display = 'none';
-        document.getElementById('announcementTitle').value = '';
-        document.getElementById('announcementDesc').value = '';
-        document.getElementById('announcementDate').value = '';
-        loadAnnouncements();
-    } else showToast("Jaza kichwa na maelezo", 'error');
-});
-
-// Bible Verse
+document.getElementById('saveAnnouncementBtn')?.addEventListener('click', async () => { const title = document.getElementById('announcementTitle').value; const desc = document.getElementById('announcementDesc').value; const date = document.getElementById('announcementDate').value; if (title && desc) { await addDoc(collection(db, "announcements"), { title, description: desc, date, createdAt: serverTimestamp() }); showToast("Tangazo limeongezwa!"); document.getElementById('announcementModal').style.display = 'none'; loadAnnouncements(); } else showToast("Jaza kichwa na maelezo", 'error'); });
 document.getElementById('updateBibleVerseBtn')?.addEventListener('click', () => document.getElementById('bibleVerseModal').style.display = 'flex');
-document.getElementById('saveBibleVerseBtn')?.addEventListener('click', async () => {
-    const text = document.getElementById('bibleVerseText').value;
-    const reference = document.getElementById('bibleVerseRef').value;
-    if(text && reference) {
-        const snapshot = await getDocs(collection(db, "bibleVerse"));
-        snapshot.forEach(async docSnap => { await deleteDoc(doc(db, "bibleVerse", docSnap.id)); });
-        await addDoc(collection(db, "bibleVerse"), { text, reference, updatedAt: serverTimestamp() });
-        showToast("Neno la siku limebadilishwa!");
-        document.getElementById('bibleVerseModal').style.display = 'none';
-        loadBibleVerse();
-    } else showToast("Jaza andiko na rejea", 'error');
-});
-
-// Events
+document.getElementById('saveBibleVerseBtn')?.addEventListener('click', async () => { const text = document.getElementById('bibleVerseText').value; const ref = document.getElementById('bibleVerseRef').value; if (text && ref) { const snapshot = await getDocs(collection(db, "bibleVerse")); snapshot.forEach(async docSnap => { await deleteDoc(doc(db, "bibleVerse", docSnap.id)); }); await addDoc(collection(db, "bibleVerse"), { text, reference: ref, updatedAt: serverTimestamp() }); showToast("Neno la siku limebadilishwa!"); document.getElementById('bibleVerseModal').style.display = 'none'; loadBibleVerse(); } else showToast("Jaza andiko na rejea", 'error'); });
 document.getElementById('addEventBtn')?.addEventListener('click', () => document.getElementById('eventModal').style.display = 'flex');
-document.getElementById('saveEventBtn')?.addEventListener('click', async () => {
-    const title = document.getElementById('eventTitle').value;
-    const date = document.getElementById('eventDate').value;
-    const description = document.getElementById('eventDesc').value;
-    if(title && date) {
-        await addDoc(collection(db, "events"), { title, date, description, createdAt: serverTimestamp() });
-        showToast("Tukio limeongezwa!");
-        document.getElementById('eventModal').style.display = 'none';
-        if(isAdmin) loadCalendarEvents(true);
-        else loadCalendarEvents(false);
-    } else showToast("Jaza jina na tarehe", 'error');
-});
-
-// Songs
+document.getElementById('saveEventBtn')?.addEventListener('click', async () => { const title = document.getElementById('eventTitle').value; const date = document.getElementById('eventDate').value; const desc = document.getElementById('eventDesc').value; if (title && date) { await addDoc(collection(db, "events"), { title, date, description: desc, createdAt: serverTimestamp() }); showToast("Tukio limeongezwa!"); document.getElementById('eventModal').style.display = 'none'; if (isAdmin) loadCalendarEvents(true); else loadCalendarEvents(false); } else showToast("Jaza jina na tarehe", 'error'); });
 document.getElementById('addSongBtn')?.addEventListener('click', () => document.getElementById('songModal').style.display = 'flex');
-document.getElementById('saveSongBtn')?.addEventListener('click', async () => {
-    const title = document.getElementById('songTitle').value;
-    const lyrics = document.getElementById('songLyrics').value;
-    if(title) {
-        await addDoc(collection(db, "songs"), { title, lyrics, createdAt: serverTimestamp() });
-        showToast("Wimbo umeongezwa!");
-        document.getElementById('songModal').style.display = 'none';
-        document.getElementById('songTitle').value = '';
-        document.getElementById('songLyrics').value = '';
-    } else showToast("Weka jina la wimbo", 'error');
-});
-
-// Member Picture Upload
+document.getElementById('saveSongBtn')?.addEventListener('click', async () => { const title = document.getElementById('songTitle').value; const lyrics = document.getElementById('songLyrics').value; if (title) { await addDoc(collection(db, "songs"), { title, lyrics, createdAt: serverTimestamp() }); showToast("Wimbo umeongezwa!"); document.getElementById('songModal').style.display = 'none'; } else showToast("Weka jina la wimbo", 'error'); });
 document.getElementById('changeMemberPicBtn')?.addEventListener('click', () => document.getElementById('memberPicUploadModal').style.display = 'flex');
-document.getElementById('uploadMemberPicBtn')?.addEventListener('click', async () => {
-    const file = document.getElementById('memberPicFile').files[0];
-    if(!file) { showToast("Chagua picha", 'error'); return; }
-    const btn = document.getElementById('uploadMemberPicBtn');
-    const original = btn.innerHTML;
-    btn.innerHTML = '<span class="loading"></span> Inapakia...';
-    btn.disabled = true;
-    try {
-        const url = await uploadToCloudinary(file);
-        await updateDoc(doc(db, "members", currentUser.uid), { profilePictureUrl: url });
-        showToast("Picha imebadilishwa!");
-        document.getElementById('memberPicUploadModal').style.display = 'none';
-        loadMemberProfile();
-    } catch(e) { showToast(e, 'error'); }
-    finally { btn.innerHTML = original; btn.disabled = false; }
-});
+document.getElementById('uploadMemberPicBtn')?.addEventListener('click', async () => { const file = document.getElementById('memberPicFile').files[0]; if (file) { try { const url = await uploadToCloudinary(file); await updateDoc(doc(db, "members", currentUser.uid), { profilePictureUrl: url }); showToast("Picha imebadilishwa!"); document.getElementById('memberPicUploadModal').style.display = 'none'; loadMemberProfile(); } catch (e) { showToast(e, 'error'); } } });
+document.getElementById('posterFile')?.addEventListener('change', (e) => { const file = e.target.files[0]; if (file) { const reader = new FileReader(); reader.onload = (ev) => { document.getElementById('posterPreviewImg').src = ev.target.result; document.getElementById('posterPreview').style.display = 'block'; }; reader.readAsDataURL(file); } });
+document.getElementById('memberPicFile')?.addEventListener('change', (e) => { const file = e.target.files[0]; if (file) { const reader = new FileReader(); reader.onload = (ev) => { document.getElementById('memberPicPreviewImg').src = ev.target.result; document.getElementById('memberPicPreview').style.display = 'block'; }; reader.readAsDataURL(file); } });
+document.getElementById('regProfilePic')?.addEventListener('change', (e) => { const file = e.target.files[0]; if (file) { const reader = new FileReader(); reader.onload = (ev) => { document.getElementById('regProfilePreviewImg').src = ev.target.result; document.getElementById('regProfilePreview').style.display = 'block'; }; reader.readAsDataURL(file); } });
+document.getElementById('posterFileInput')?.addEventListener('change', (e) => { const file = e.target.files[0]; if (file) { const reader = new FileReader(); reader.onload = (ev) => { document.getElementById('posterPreviewImg').src = ev.target.result; document.getElementById('posterPreviewContainer').style.display = 'block'; }; reader.readAsDataURL(file); } });
 
-// Preview member picture
-document.getElementById('memberPicFile')?.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    if(file) {
-        const reader = new FileReader();
-        reader.onload = (ev) => {
-            document.getElementById('memberPicPreviewImg').src = ev.target.result;
-            document.getElementById('memberPicPreview').style.display = 'block';
-        };
-        reader.readAsDataURL(file);
-    }
-});
+document.querySelectorAll('#adminDesktopTabs .tab, #adminMobileTabs .tab').forEach(t => t.addEventListener('click', () => switchAdminTab(t.dataset.tab)));
+document.querySelectorAll('#memberDesktopTabs .tab, #memberMobileTabs .tab').forEach(t => t.addEventListener('click', () => switchMemberTab(t.dataset.tab.replace('member-', ''))));
 
-// Preview registration picture
-document.getElementById('regProfilePic')?.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    if(file) {
-        const reader = new FileReader();
-        reader.onload = (ev) => {
-            document.getElementById('regProfilePreviewImg').src = ev.target.result;
-            document.getElementById('regProfilePreview').style.display = 'block';
-        };
-        reader.readAsDataURL(file);
-    }
-});
-
-// Tab switching
-document.querySelectorAll('#adminTabs .tab').forEach(t => t.addEventListener('click', () => switchAdminTab(t.dataset.tab)));
-document.querySelectorAll('#memberTabs .tab').forEach(t => t.addEventListener('click', () => switchMemberTab(t.dataset.tab.replace('member-', ''))));
-
-// Close modals
+document.getElementById('closePosterUploadModal')?.addEventListener('click', () => document.getElementById('posterUploadModal').style.display = 'none');
 document.getElementById('closeAnnouncementModal')?.addEventListener('click', () => document.getElementById('announcementModal').style.display = 'none');
 document.getElementById('closeBibleVerseModal')?.addEventListener('click', () => document.getElementById('bibleVerseModal').style.display = 'none');
 document.getElementById('closeEventModal')?.addEventListener('click', () => document.getElementById('eventModal').style.display = 'none');
@@ -685,28 +545,33 @@ document.getElementById('closeSongModal')?.addEventListener('click', () => docum
 document.getElementById('closeEditMemberModal')?.addEventListener('click', () => document.getElementById('editMemberModal').style.display = 'none');
 document.getElementById('closeMemberPicModal')?.addEventListener('click', () => document.getElementById('memberPicUploadModal').style.display = 'none');
 
-// Auth state
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger?.addEventListener('click', () => { hamburger.classList.toggle('active'); mobileNav.classList.toggle('open'); });
+
 onAuthStateChanged(auth, async (user) => {
-    if(user) {
+    if (user) {
         currentUser = user;
         const docSnap = await getDoc(doc(db, "members", user.uid));
         currentUserData = docSnap.exists() ? docSnap.data() : null;
         isAdmin = currentUserData?.role === 'admin' || user.email === 'admin@tucasa.com';
-        
         document.getElementById('authSection').style.display = 'none';
         document.getElementById('userEmailDisplay').innerHTML = `<i class="fas fa-user-circle"></i> ${currentUserData?.fullName || user.email}`;
         document.getElementById('userRoleBadge').innerHTML = isAdmin ? '👑 Admin' : '👤 Member';
-        
-        if(isAdmin) {
-            document.getElementById('adminTabs').style.display = 'flex';
-            document.getElementById('memberTabs').style.display = 'none';
+        if (isAdmin) {
+            document.getElementById('adminDesktopTabs').style.display = 'flex';
+            document.getElementById('adminMobileTabs').style.display = 'block';
+            document.getElementById('memberDesktopTabs').style.display = 'none';
+            document.getElementById('memberMobileTabs').style.display = 'none';
             document.getElementById('adminDashboardContent').style.display = 'block';
             document.getElementById('memberDashboardContent').style.display = 'none';
             initAdminMembers();
             switchAdminTab('dashboard');
         } else {
-            document.getElementById('adminTabs').style.display = 'none';
-            document.getElementById('memberTabs').style.display = 'flex';
+            document.getElementById('adminDesktopTabs').style.display = 'none';
+            document.getElementById('adminMobileTabs').style.display = 'none';
+            document.getElementById('memberDesktopTabs').style.display = 'flex';
+            document.getElementById('memberMobileTabs').style.display = 'block';
             document.getElementById('adminDashboardContent').style.display = 'none';
             document.getElementById('memberDashboardContent').style.display = 'block';
             loadMemberProfile();
@@ -718,8 +583,7 @@ onAuthStateChanged(auth, async (user) => {
         loadBibleVerse();
         loadAnnouncements();
         initRealtimeChat();
-        if(isAdmin) loadCalendarEvents(true);
-        else loadCalendarEvents(false);
+        if (isAdmin) loadCalendarEvents(true); else loadCalendarEvents(false);
     } else {
         document.getElementById('authSection').style.display = 'block';
         document.getElementById('adminDashboardContent').style.display = 'none';
